@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  app:
+    container_name: tasks-app
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+       - .:/usr/src/app
+    ports:
+       - '3000:3000'
+    command: sh -c "yarn install && yarn start"
+ 
+
+
+
