@@ -24,8 +24,14 @@ export default function Router() {
             ],
         },
         {
-            path: 'login',
+            path: '/',
             element: <LoginPage />,
+            children: [{ element: <Navigate to='/login' />, index: true }],
+        },
+        {
+            path: '/login',
+            element: <LoginPage />,
+            children: [{ element: <Navigate to='/login' />, index: true }],
         },
         {
             element: <SimpleLayout />,
